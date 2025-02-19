@@ -14,26 +14,13 @@ jobs:
     steps:
       - name: ⤵️ Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: 21
-
-      - name: 🐘 Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-
+          fetch-depth: 1
       - name: 🚀 Run Kotlin ktlint
-        run: ./gradlew ktlintCheck
-        continue-on-error: true
-
-      - name: ⤴️ Upload Ktlint Reports
-        uses: yutailang0119/action-ktlint@v4
+        uses: ScaCap/action-ktlint@v1
         with:
-          report-path: build/reports/ktlint/**/*.xml
-          ignore-warnings: true
-        continue-on-error: false
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
 
   kotlin_test:
     name: Kotlin Test
@@ -42,7 +29,7 @@ jobs:
       - name: ⤵️ Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: ☕️ Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
