@@ -1,7 +1,7 @@
 
 <div style="display:flex;gap:1%;margin-bottom:20px">
   <h1 style="border:none"> Fama - City of Things Adapter System</h1>
-  <img height="100px" alt="logo" src="documentation/images/logo.png">
+  <img height="100px" alt="logo" src="documentation/images/logo.svg">
 </div>
 
  Fama is a software solution designed to bridge weather sensor data with home automation systems. Currently focused on the city of Solingen, Fama is designed to receive data from RabbitMQ, process it, and format it for seamless integration with various supported home systems.
