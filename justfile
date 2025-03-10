@@ -3,7 +3,7 @@ default:
 
 # Run a complete development environment
 run-dev:
-  fama-dev
+  open-smart-city-home-dev
 
 fmt:
   ./gradlew ktlintCheck

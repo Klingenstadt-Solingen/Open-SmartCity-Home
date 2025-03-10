@@ -1,5 +1,5 @@
 {
-  description = "Fama development environment";
+  description = "Open smart city home development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -46,7 +46,7 @@
               gradle
               just
               jdt-language-server
-              self'.packages.fama-dev
+              self'.packages.open-smart-city-home-dev
             ];
 
              inputsFrom = [
@@ -54,7 +54,7 @@
              ];
           };
 
-          process-compose.fama-dev = {
+          process-compose.open-smart-city-home-dev = {
               cli.options.port = 8081;
               settings = {
                 environment = {

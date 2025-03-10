@@ -10,7 +10,7 @@ env:
   RABBIT_MQ_STOMP_URL: ${{ vars.RABBIT_MQ_STOMP_URL }}
   RABBIT_MQ_STOMP_USERNAME: ${{ vars.RABBIT_MQ_STOMP_USERNAME }}
   RABBIT_MQ_STOMP_PASSWORD: ${{ secrets.RABBIT_MQ_STOMP_PASSWORD }}
-  FAMA_VERSION: ${{ github.ref_name }}
+  HOME_VERSION: ${{ github.ref_name }}
   SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
 jobs:
@@ -43,7 +43,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build with Gradle
-        run: ./gradlew generateBuildConfig jar --no-daemon -P version="$FAMA_VERSION"
+        run: ./gradlew generateBuildConfig jar --no-daemon -P version="$HOME_VERSION"
 
       - name: Verify Build Artifacts
         run: ls -lah build/libs/
@@ -56,4 +56,4 @@ jobs:
           platforms: linux/amd64,linux/aarch64
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/fama:${{ github.ref_name }}
+            ${{ vars.DOCKERHUB_USERNAME }}/open-smart-city-home:${{ github.ref_name }}

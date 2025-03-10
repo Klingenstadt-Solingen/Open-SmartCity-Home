@@ -1,10 +1,10 @@
 # Home Assistant
 
-This guide explains how to integrate the Fama application with Home Assistant using MQTT for seamless weather sensor data integration.
+This guide explains how to integrate the Open Smart City Home application with Home Assistant using MQTT for seamless weather sensor data integration.
 
 ## Prerequisites
 
-Ensure you have a running instance of Home Assistant to integrate weather sensor data from the Fama application.
+Ensure you have a running instance of Home Assistant to integrate weather sensor data from the Open Smart City Home application.
 
 Ensure Home Assistant is updated to the latest version for compatibility with MQTT integration.
 
@@ -13,24 +13,24 @@ You can find the official Home Assistant documentation at the following link:
 
 This site contains detailed guides, tutorials, and information about installation, configuration, and integrations.
 
-## Setting Up Fama as a Home Assistant Addon
+## Setting Up Open Smart City Home as a Home Assistant Addon
 
 Click on the button below:
 
 [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/nedeco/fama-hass-addons)
 
-## Setting Up Fama with Docker
+## Setting Up Open Smart City Home with Docker
 
-Fama can be deployed using Docker, either with a simple `docker run` command or using `docker-compose` for more complex setups.
+Open Smart City Home can be deployed using Docker, either with a simple `docker run` command or using `docker-compose` for more complex setups.
 
 ### Prerequisites
-Before running Fama, ensure you have the following installed:
+Before running Open Smart City Home, ensure you have the following installed:
 - Docker ([Installation Guide](https://docs.docker.com/get-docker/))
 - Docker Compose (if using `docker-compose.yml` setup)
 - A home automation system (Home Assistant, OpenHAB, or ioBroker)
 
-## Running Fama with `docker run`
-You can start Fama with a single `docker run` command, passing the required environment variables:
+## Running Open Smart City Home with `docker run`
+You can start Open Smart City Home with a single `docker run` command, passing the required environment variables:
 
 ```sh
 docker run -d --name fama \
@@ -40,7 +40,7 @@ docker run -d --name fama \
   devopsnedeco/fama
 ```
 
-## Running Fama with Docker Compose
+## Running Open Smart City Home with Docker Compose
 For more flexibility, you can use a `docker-compose.yml` file:
 
 ```yaml
@@ -57,13 +57,13 @@ services:
       MQTT_PASSWORD: "my_mqtt_password"
 ```
 
-To start Fama using Docker Compose, run:
+To start Open Smart City Home using Docker Compose, run:
 ```sh
 docker-compose up -d
 ```
 
 ## Environment Variables
-Fama requires several environment variables to function correctly. Below is a list of the key variables:
+Open Smart City Home requires several environment variables to function correctly. Below is a list of the key variables:
 
 | Variable | Description |
 |----------|-------------|
@@ -73,7 +73,7 @@ Fama requires several environment variables to function correctly. Below is a li
 | `MQTT_PASSWORD` | MQTT broker password (required for Home Assistant/OpenHAB integration) |
 
 ## Verifying the Setup
-Once Fama is running, you can verify its status using:
+Once Open Smart City Home is running, you can verify its status using:
 ```sh
 docker ps
 ```
@@ -112,12 +112,12 @@ If you are running Home Assistant locally, you can open it via [http://localhost
 </p>
 
 3. Configure the MQTT broker:
-   - **Broker Hostname/IP:** Enter the hostname or IP address of the Fama application's MQTT broker.
+   - **Broker Hostname/IP:** Enter the hostname or IP address of the Open Smart City Home application's MQTT broker.
    - **Port:** Set the port to `1883`.
    - **Username:** Enter the username for the MQTT broker.
    - **Password:** Enter the corresponding password.
 
-   Ensure the username and password match the credentials configured in the Fama application's MQTT settings.
+   Ensure the username and password match the credentials configured in the Open Smart City Home application's MQTT settings.
 
 <p>
   <img width="600px" alt="logo" src="../images/homeassistant_mqtt_settings2.png">
@@ -125,11 +125,11 @@ If you are running Home Assistant locally, you can open it via [http://localhost
 
 4. Click **Submit** to save the settings.
 
-  Note: Ensure that MQTT discovery is enabled in Home Assistant. This allows Fama's sensor data to be automatically detected and displayed.
+  Note: Ensure that MQTT discovery is enabled in Home Assistant. This allows Open Smart City Home's sensor data to be automatically detected and displayed.
 
 ## Conclusion
 
-Ensure that the Fama application is configured correctly to send MQTT messages. The MQTT username and password are required to connect to Fama via MQTT. Once the Fama application receives messages via the RabbitMQ, it send message via MQTT. You can verify the integration by navigating to the Devices or Entities section in Home Assistant. Weather sensor data should appear as newly discovered devices or entities.
+Ensure that the Open Smart City Home application is configured correctly to send MQTT messages. The MQTT username and password are required to connect to Open Smart City Home via MQTT. Once the Open Smart City Home application receives messages via the RabbitMQ, it send message via MQTT. You can verify the integration by navigating to the Devices or Entities section in Home Assistant. Weather sensor data should appear as newly discovered devices or entities.
 
 <p>
   <img width="600px" alt="logo" src="../images/homeassistant_stations.png">
@@ -140,5 +140,5 @@ Ensure that the Fama application is configured correctly to send MQTT messages. 
 If you do not see sensors in your Home Assistant dashboard:
 
   - Verify the MQTT broker connection settings.
-  - Ensure the Fama application is configured correctly to send MQTT messages.
+  - Ensure the Open Smart City Home application is configured correctly to send MQTT messages.
   - Check the Home Assistant logs for any errors related to MQTT integration.

@@ -45,8 +45,8 @@ class IoBrokerAdapter :
     }
 
     private suspend fun ensureFolderStructure() {
-        val famaUrl = restUrl(IoBrokerApiCommandType.OBJECT, settings.ioBrokerPrefix)
-        if (!httpClient.get(famaUrl).status.isSuccess()) {
+        val url = restUrl(IoBrokerApiCommandType.OBJECT, settings.ioBrokerPrefix)
+        if (!httpClient.get(url).status.isSuccess()) {
             val baseFolderPayload =
                 IoBrokerObjectPayload.from(
                     name = settings.ioBrokerPrefix,
@@ -54,12 +54,12 @@ class IoBrokerAdapter :
                     commonType = IoBrokerCommonType.FOLDER,
                 )
             val baseFolderPayloadString = json.encodeToString(baseFolderPayload)
-            httpClient.post(famaUrl) {
+            httpClient.post(url) {
                 contentType(ContentType.Application.Json)
                 setBody(baseFolderPayloadString)
             }
         }
-        if (!httpClient.get("$famaUrl.${settings.ioBrokerStationFolderPrefix}").status.isSuccess()) {
+        if (!httpClient.get("$url.${settings.ioBrokerStationFolderPrefix}").status.isSuccess()) {
             val baseFolderPayload =
                 IoBrokerObjectPayload.from(
                     name = settings.ioBrokerStationFolderPrefix,
@@ -67,7 +67,7 @@ class IoBrokerAdapter :
                     commonType = IoBrokerCommonType.FOLDER,
                 )
             val baseFolderPayloadString = json.encodeToString(baseFolderPayload)
-            httpClient.post("$famaUrl.${settings.ioBrokerStationFolderPrefix}") {
+            httpClient.post("$url.${settings.ioBrokerStationFolderPrefix}") {
                 contentType(ContentType.Application.Json)
                 setBody(baseFolderPayloadString)
             }
