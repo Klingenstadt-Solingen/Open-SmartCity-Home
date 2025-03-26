@@ -27,4 +27,7 @@ interface Settings {
     val ioBrokerUrl: String
     val ioBrokerPrefix: String
     val ioBrokerStationFolderPrefix: String
+
+    // Station Subscriptions
+    val sensorStationFilterIds: String
 }

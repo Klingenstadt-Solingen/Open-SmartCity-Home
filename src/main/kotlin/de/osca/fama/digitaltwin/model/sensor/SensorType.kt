@@ -14,4 +14,5 @@ data class SensorType(
     val order: Int,
     val createdAt: Instant,
     val updatedAt: Instant,
+    val graphDivider: List<GraphDivider> = emptyList(),
 )
