@@ -18,4 +18,5 @@ data class MockedSettings(
     override val ioBrokerUrl: String = "http://localhost:8087/v1/",
     override val ioBrokerPrefix: String = "fama",
     override val ioBrokerStationFolderPrefix: String = "sensor-station",
+    override val sensorStationFilterIds: String = "some-filter-id1, some-filter-id2",
 ) : Settings

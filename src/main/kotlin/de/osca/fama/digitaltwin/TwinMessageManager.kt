@@ -3,6 +3,7 @@ package de.osca.fama.digitaltwin
 import de.osca.fama.digitaltwin.model.sensor.Sensor
 import de.osca.fama.logger.logger
 import de.osca.fama.settings.BuildConfig
+import de.osca.fama.settings.Settings
 import de.osca.fama.smarthomeadapter.SmartHomeAdapter
 import io.ktor.client.HttpClient
 import io.sentry.kotlin.SentryContext
@@ -14,6 +15,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.datetime.Clock
+import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import org.hildan.krossbow.stomp.StompClient
 import org.hildan.krossbow.stomp.StompSession
@@ -31,6 +33,7 @@ import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.seconds
 
 class TwinMessageManager : KoinComponent {
+    private val settings: Settings by inject()
     private val logger by logger()
     private val buildConfig: BuildConfig by inject()
     private val smartHomeAdapter: SmartHomeAdapter by inject()
@@ -103,8 +106,15 @@ class TwinMessageManager : KoinComponent {
                         )
                     logger.i("Subscribed to Sensors")
                     subscription?.collect { message ->
-                        if (!checkVersions(message)) return@collect
-                        smartHomeAdapter.updateSensorStation(message.payload)
+                        message?.let { digitalTwinMessage ->
+                            if (!checkVersions(digitalTwinMessage)) return@collect
+                            if (settings.sensorStationFilterIds.isNotBlank()) {
+                                if (!settings.sensorStationFilterIds.split(",").contains(digitalTwinMessage.payload.station.objectId)) {
+                                    return@collect
+                                }
+                            }
+                            smartHomeAdapter.updateSensorStation(digitalTwinMessage.payload)
+                        }
                     }
                 },
             )
@@ -123,10 +133,14 @@ val json =
         explicitNulls = true
     }
 
-private suspend inline fun <reified T : Any> StompSession.subscribeAndAutoAck(header: StompSubscribeHeaders): Flow<T> {
+private suspend inline fun <reified T : Any> StompSession.subscribeAndAutoAck(header: StompSubscribeHeaders): Flow<T?> {
     return subscribe(header).map { message ->
-        val entity = json.decodeFromString<T>(message.bodyAsText)
-        message.headers.ack?.let { ack(it) }
-        return@map entity
+        try {
+            val entity = json.decodeFromString<T>(message.bodyAsText)
+            message.headers.ack?.let { ack(it) }
+            return@map entity
+        } catch (e: SerializationException) {
+            return@map null
+        }
     }
 }

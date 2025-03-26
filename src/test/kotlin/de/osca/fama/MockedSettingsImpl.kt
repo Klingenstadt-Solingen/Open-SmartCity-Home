@@ -22,5 +22,6 @@ class MockedSettingsImpl : Settings {
     override val ioBrokerUrl: String by envString("IO_BROKER_URL")
     override val ioBrokerPrefix: String by envString("IO_BROKER_PREFIX", defaultValue = "fama")
     override val ioBrokerStationFolderPrefix: String by envString("IO_BROKER_STATION_FOLDER_PREFIX", defaultValue = "sensor-station")
+    override val sensorStationFilterIds: String by envString("SENSOR_STATION_FILTER_IDS", defaultValue = "")
     val envVarMissingExceptionTestVariable: String by envString("ENV_VAR_MISSING_EXCEPTION_TEST_VARIABLE")
 }
