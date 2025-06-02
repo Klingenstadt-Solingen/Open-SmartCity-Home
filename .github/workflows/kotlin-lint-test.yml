@@ -11,6 +11,9 @@ jobs:
   kotlin_lint:
     name: Kotlin Linting
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: ⤵️ Checkout
         uses: actions/checkout@v4
@@ -19,12 +22,16 @@ jobs:
       - name: 🚀 Run Kotlin ktlint
         uses: ScaCap/action-ktlint@v1
         with:
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
 
   kotlin_test:
     name: Kotlin Test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
     steps:
       - name: ⤵️ Checkout
         uses: actions/checkout@v4

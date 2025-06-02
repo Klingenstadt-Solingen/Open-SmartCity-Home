@@ -15,6 +15,7 @@ class SettingsTest {
         val classOfMap: Class<*> = System.getenv().javaClass
         val field: Field = classOfMap.getDeclaredField("m")
         field.isAccessible = true
+        @Suppress("UNCHECKED_CAST")
         return@lazy field.get(System.getenv()) as MutableMap<String, String>
     }
 
