@@ -5,7 +5,22 @@ All significant changes (incl. versioning) are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Klingenstadt-Solingen/OSCAHome/releases)
+## [Unreleased](https://github.com/Klingenstadt-Solingen/Open-SmartCity-Home/releases)
+
+### Added
+
+### Changed
+
+### Deprecated
+
+### Fixed
+
+### Removed
+
+### Security
+
+
+## [1.0.0](https://github.com/Klingenstadt-Solingen/Open-SmartCity-Home/releases/tag/1.0.0)
 
 ### Added
 
@@ -21,13 +36,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initialize Project
 - IoBroker Adapter
 - Station id filtering
-
-### Changed
-
-### Deprecated
-
-### Fixed
-
-### Removed
-
-### Security
