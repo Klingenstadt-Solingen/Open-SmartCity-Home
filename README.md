@@ -25,7 +25,7 @@ Open Smart City Home uses MQTT to publish weather sensor data in Home Assistant'
 
 See the [guide on connecting Open Smart City Home to Home Assistant.](/documentation/homesystem/HOMEASSISTANT.md) 
 
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/Klingenstadt-Solingen/OSCAHome-hassio-addons)
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https://github.com/Klingenstadt-Solingen/Open-SmartCity-Home-hassio-addons)
 
 See the [guide on connecting Open Smart City Home to OpenHAB](/documentation/homesystem/OPENHAB.md).
 
@@ -43,8 +43,8 @@ See the [contribution guide](CONTRIBUTING.md) for more information.
 
 ## License
 
-Open Smart City Home is licensed under the [Open Smart City License](LICENSE.md) .
+Open Smart City Home is licensed under the [Open Smart City License](LICENSE.md).
 
 ## Contact
 
-For questions or support, please contact us at [fama@nedeco.de](mailto:fama@nedeco.de).
+For questions or support, please contact us at [opensmartcity@nedeco.de](mailto:opensmartcity@nedeco.de).
