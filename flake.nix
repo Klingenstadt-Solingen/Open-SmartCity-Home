@@ -1,5 +1,5 @@
 {
-  description = "Open smart city home development environment";
+  description = "Open SmartCity Home development environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";

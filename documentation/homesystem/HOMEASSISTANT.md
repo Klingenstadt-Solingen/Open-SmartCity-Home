@@ -1,10 +1,10 @@
 # Home Assistant
 
-This guide explains how to integrate the Open Smart City Home application with Home Assistant using MQTT for seamless weather sensor data integration.
+This guide explains how to integrate the Open SmartCity Home application with Home Assistant using MQTT for seamless weather sensor data integration.
 
 ## Prerequisites
 
-Ensure you have a running instance of Home Assistant to integrate weather sensor data from the Open Smart City Home application.
+Ensure you have a running instance of Home Assistant to integrate weather sensor data from the Open SmartCity Home application.
 
 Ensure Home Assistant is updated to the latest version for compatibility with MQTT integration.
 
@@ -13,7 +13,7 @@ You can find the official Home Assistant documentation at the following link:
 
 This site contains detailed guides, tutorials, and information about installation, configuration, and integrations.
 
-## Setting Up Open Smart City Home as a Home Assistant Addon
+## Setting Up Open SmartCity Home as a Home Assistant Addon
 
 Click on the button below:
 

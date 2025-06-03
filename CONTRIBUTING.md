@@ -4,13 +4,13 @@ We value contributions from the community! To maintain project quality and ensur
 If you have ideas or want to add support for other systems, please submit a pull request or open an issue.
 
 ## Prerequisites
-- **Home System:** Ensure you have access to a running home system like Home Assistant, OpenHAB, or ioBroker. These systems are required to test Open Smart City Home's integration and functionality.
+- **Home System:** Ensure you have access to a running home system like Home Assistant, OpenHAB, or ioBroker. These systems are required to test Open SmartCity Home's integration and functionality.
 
 ## Installation
 1. Fork this repository on GitHub. For detailed instructions, refer to the [GitHub guide on forking a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
 2. Configure the application:
-    - Copy and rename the `.env.example` file to `.env`, then update the file with the desired settings. These are critical for connecting Open Smart City Home to your home system.
+    - Copy and rename the `.env.example` file to `.env`, then update the file with the desired settings. These are critical for connecting Open SmartCity Home to your home system.
     - Update the RabbitMQ connection settings in the configuration file.
     - Update the MQTT or ioBroker API settings as needed.
     - Ensure that all required dependencies like [Java 21](https://www.oracle.com/de/java/technologies/downloads/#java21) are installed and your environment meets the prerequisites before building and running the application.
@@ -22,7 +22,7 @@ If you have ideas or want to add support for other systems, please submit a pull
 
 
 ## Configuration
-Open Smart City Home uses a configuration file to manage its settings. The following parameters must be set:
+Open SmartCity Home uses a configuration file to manage its settings. The following parameters must be set:
 
 **RabbitMQ Settings.**
 
@@ -51,7 +51,7 @@ Open Smart City Home uses a configuration file to manage its settings. The follo
     - **HA** for Home Assistant and OpenHAB
     - **IB** for ioBroker
 - **Home Assistant/OpenHAB specific:**
-  - **MQTT_USERNAME:** Username to connect to Open Smart City Home's MQTT.
+  - **MQTT_USERNAME:** Username to connect to Open SmartCity Home's MQTT.
   - **MQTT_PASSWORD:** Password
 - **ioBroker specific:**
   - **IO_BROKER_URL:** ioBroker's REST API url.
@@ -59,7 +59,7 @@ Open Smart City Home uses a configuration file to manage its settings. The follo
 
 ## Connecting with home system
 
-See the following documentation on how to set up a home system of choice with Open Smart City Home.
+See the following documentation on how to set up a home system of choice with Open SmartCity Home.
 
 Start the appropriate Docker container for your home system using the commands below. Ensure [Docker](https://docs.docker.com/get-started/introduction/) is installed and running on your system.
 
@@ -69,19 +69,19 @@ Start Docker with your selected home system using one of the predefined configur
     ```
     docker compose run homeassistant
     ```
-    See the documentation on how to [connect Home Assistant to Open Smart City Home](/documentation/homesystem/HOMEASSISTANT.md)
+    See the documentation on how to [connect Home Assistant to Open SmartCity Home](/documentation/homesystem/HOMEASSISTANT.md)
 
 - **OpenHAB:** 
     ```
     docker compose run openhab
     ```
-    See the documentation on how to [connect OpenHAB to Open Smart City Home](/documentation/homesystem/OPENHAB.md)
+    See the documentation on how to [connect OpenHAB to Open SmartCity Home](/documentation/homesystem/OPENHAB.md)
 
 - **ioBroker:** 
     ```
     docker compose run iobroker
     ```
-    See the documentation on how to [connect ioBroker to Open Smart City Home](/documentation/homesystem/IOBROKER.md)
+    See the documentation on how to [connect ioBroker to Open SmartCity Home](/documentation/homesystem/IOBROKER.md)
 
 ## Commit Messages
 We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to structure our commit messages.

@@ -1,6 +1,6 @@
 # ioBroker
 
-This guide explains how to integrate the Open Smart City Home application with ioBroker using the REST API adapter for weather sensor data processing.
+This guide explains how to integrate the Open SmartCity Home application with ioBroker using the REST API adapter for weather sensor data processing.
 
 ## Prerequisites
 

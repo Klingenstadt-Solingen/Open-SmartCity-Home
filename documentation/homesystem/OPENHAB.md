@@ -1,21 +1,21 @@
 # OpenHAB
 
-This guide explains how to connect the Open Smart City Home application to OpenHAB via MQTT for weather sensor data integration.
+This guide explains how to connect the Open SmartCity Home application to OpenHAB via MQTT for weather sensor data integration.
 
 ## Prerequisite
 
 Ensure you have OpenHAB installed and running on your system before starting this guide.
 
-Make sure OpenHAB is updated to the latest version for compatibility with the Open Smart City Home application.
+Make sure OpenHAB is updated to the latest version for compatibility with the Open SmartCity Home application.
 
 You can find the official OpenHAB documentation at the following link:
 [OpenHAB Documentation](https://www.openhab.org/docs/)
 
 This site contains detailed guides, tutorials, and information about adapters, installation, and configuration.
 
-## Setting Up Open Smart City Home with Docker
+## Setting Up Open SmartCity Home with Docker
 
-Open Smart City Home can be deployed using Docker, either with a simple `docker run` command or using `docker-compose` for more complex setups.
+Open SmartCity Home can be deployed using Docker, either with a simple `docker run` command or using `docker-compose` for more complex setups.
 
 ### Prerequisites
 Before running Open Smart City Home, ensure you have the following installed:
