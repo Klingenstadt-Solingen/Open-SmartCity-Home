@@ -97,7 +97,7 @@ object FamaApplication : KoinComponent {
             options.dsn = buildConfig.sentryDsn
             options.tracesSampleRate = 1.0
             options.profilesSampleRate = 0.2
-            options.release = "fama@${buildConfig.version}"
+            options.release = "open-smartcity-home@${buildConfig.version}"
         }
         Sentry.configureScope { scope ->
             scope.setContexts(

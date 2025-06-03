@@ -93,7 +93,7 @@ sentry {
     includeSourceContext = true
 
     org = "open-smart-city"
-    projectName = "fama"
+    projectName = "home"
     authToken = System.getenv("SENTRY_AUTH_TOKEN")
     autoInstallation {
         enabled = true
