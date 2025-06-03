@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "de.osca.fama"
-version = "1.0-SNAPSHOT"
+version = project.version
 
 repositories {
     mavenCentral()
