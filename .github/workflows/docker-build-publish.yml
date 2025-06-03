@@ -56,4 +56,4 @@ jobs:
           platforms: linux/amd64,linux/aarch64
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/open-smart-city-home:${{ github.ref_name }}
+            ${{ vars.DOCKERHUB_PREFIX }}/open-smart-city-home:${{ github.ref_name }}

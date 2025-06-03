@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-openjdk-alpine:21.0.5 AS fama
+FROM bellsoft/liberica-openjdk-alpine:21.0.7 AS open-smartcity-home
 
 LABEL \
   maintainer="Nedeco" \
