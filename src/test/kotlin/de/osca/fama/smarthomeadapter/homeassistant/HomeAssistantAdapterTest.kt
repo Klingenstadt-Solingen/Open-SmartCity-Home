@@ -49,7 +49,7 @@ class HomeAssistantAdapterTest : KoinTest {
                     unitOfMeasurement = testSensor.sensorType.unit,
                     deviceClass =
                         HomeAssistantDeviceClass.entries.find {
-                            it.name == testSensor.sensorType.name
+                            it.name == testSensor.sensorType.type.name
                         },
                     stateTopic =
                         homeAssistantAdapter.topic(
@@ -67,7 +67,7 @@ class HomeAssistantAdapterTest : KoinTest {
                         ),
                     origin =
                         HomeAssistantOrigin(
-                            name = "Fama",
+                            name = "Open SmartCity Home",
                             swVersion = buildConfig.version,
                             supportUrl = buildConfig.supportUrl,
                         ),
