@@ -55,7 +55,7 @@ class HomeAssistantAdapter :
     private fun createSensor(sensor: Sensor) {
         val deviceClass =
             HomeAssistantDeviceClass.entries.find {
-                it.name == sensor.sensorType.name
+                it.name == sensor.sensorType.type.name
             }
 
         val icon =
@@ -88,7 +88,7 @@ class HomeAssistantAdapter :
                     ),
                 origin =
                     HomeAssistantOrigin(
-                        name = "Fama",
+                        name = "Open SmartCity Home",
                         swVersion = buildConfig.version,
                         supportUrl = buildConfig.supportUrl,
                     ),
