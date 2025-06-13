@@ -57,3 +57,4 @@ jobs:
           push: true
           tags: |
             ${{ vars.DOCKERHUB_PREFIX }}/open-smartcity-home:${{ github.ref_name }}
+            ${{ vars.DOCKERHUB_PREFIX }}/open-smartcity-home:latest
