@@ -33,11 +33,11 @@ Before running Open Smart City Home, ensure you have the following installed:
 You can start Open Smart City Home with a single `docker run` command, passing the required environment variables:
 
 ```sh
-docker run -d --name fama \
+docker run -d --name open-smartcity-home \
   -e SMART_HOME_TYPE=HA \
   -e MQTT_USERNAME=my_mqtt_user \
   -e MQTT_PASSWORD=my_mqtt_password \
-  devopsnedeco/fama
+  klingenstadt/open-smartcity-home
 ```
 
 ## Running Open Smart City Home with Docker Compose
@@ -45,9 +45,9 @@ For more flexibility, you can use a `docker-compose.yml` file:
 
 ```yaml
 services:
-  fama:
-    image: devopsnedeco/fama
-    container_name: fama
+  open-smartcity-home:
+    image: klingenstadt/open-smartcity-home
+    container_name: open-smartcity-home
     restart: unless-stopped
     ports:
       - 1883:1883
@@ -68,20 +68,29 @@ Open Smart City Home requires several environment variables to function correctl
 | Variable | Description |
 |----------|-------------|
 | `SMART_HOME_TYPE` | Type of home automation system (`HA` for Home Assistant/OpenHAB) |
-| `MQTT_URL` | Optinal External MQTT broker URL (required for Home Assistant/OpenHAB integration) |
+| `MQTT_URL` | Optional External MQTT broker URL (required for Home Assistant/OpenHAB integration) |
 | `MQTT_USERNAME` | MQTT broker username (required for Home Assistant/OpenHAB integration) |
 | `MQTT_PASSWORD` | MQTT broker password (required for Home Assistant/OpenHAB integration) |
+| `SENSOR_STATION_FILTER_IDS` | Optional Sensor Station IDs of stations which will be provided exclusively |
+
+### Filterin by Sensor Stations
+
+The `SENSOR_STATION_FILTER_IDS` variable needs to be a comma seperated list of station ids. If set, Open SmartCity Home will provide *only* data from these stations. 
+
+If you are using the Home Assistant Add-on you can alternatively just set the station ids in the Add-on's config.
+
+You can find the ids [here](https://masterportal.solingen.de/portale/smartcity/?Map/layerIds=5,16,987&visibility=true,true,true&transparency=0,0,0&Map/center=%5b366111,5670646%5d&Map/zoomLevel=3&uiStyle=simple)
 
 ## Verifying the Setup
 Once Open Smart City Home is running, you can verify its status using:
 ```sh
 docker ps
 ```
-This should display a running container named `fama`.
+This should display a running container named `open-smartcity-home`.
 
 To check logs for troubleshooting:
 ```sh
-docker logs -f fama
+docker logs -f open-smartcity-home
 ```
 
 ## MQTT Configuration

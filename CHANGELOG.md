@@ -19,6 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.0.2](https://github.com/Klingenstadt-Solingen/Open-SmartCity-Home/releases/tag/1.0.2)
+
+### Added
+- Station filter ids documentation
+
 ## [1.0.1](https://github.com/Klingenstadt-Solingen/Open-SmartCity-Home/releases/tag/1.0.1)
 
 ### Fixed
