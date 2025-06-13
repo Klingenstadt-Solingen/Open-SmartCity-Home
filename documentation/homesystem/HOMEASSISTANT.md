@@ -1,10 +1,10 @@
 # Home Assistant
 
-This guide explains how to integrate the Open SmartCity Home application with Home Assistant using MQTT for seamless weather sensor data integration.
+This guide explains how to integrate the Open SmartCity Home application with Home Assistant using MQTT for seamless sensor data integration.
 
 ## Prerequisites
 
-Ensure you have a running instance of Home Assistant to integrate weather sensor data from the Open SmartCity Home application.
+Ensure you have a running instance of Home Assistant to integrate sensor data from the Open SmartCity Home application.
 
 Ensure Home Assistant is updated to the latest version for compatibility with MQTT integration.
 
@@ -75,7 +75,7 @@ Open Smart City Home requires several environment variables to function correctl
 
 ### Filterin by Sensor Stations
 
-The `SENSOR_STATION_FILTER_IDS` variable needs to be a comma seperated list of station ids. If set, Open SmartCity Home will provide *only* data from these stations. 
+The `SENSOR_STATION_FILTER_IDS` variable needs to be a comma seperated list of station ids. If set, Open SmartCity Home will provide *only* data from these stations.
 
 If you are using the Home Assistant Add-on you can alternatively just set the station ids in the Add-on's config.
 
@@ -138,7 +138,7 @@ If you are running Home Assistant locally, you can open it via [http://localhost
 
 ## Conclusion
 
-Ensure that the Open Smart City Home application is configured correctly to send MQTT messages. The MQTT username and password are required to connect to Open Smart City Home via MQTT. Once the Open Smart City Home application receives messages via the RabbitMQ, it send message via MQTT. You can verify the integration by navigating to the Devices or Entities section in Home Assistant. Weather sensor data should appear as newly discovered devices or entities.
+Ensure that the Open Smart City Home application is configured correctly to send MQTT messages. The MQTT username and password are required to connect to Open Smart City Home via MQTT. Once the Open Smart City Home application receives messages via the RabbitMQ, it send message via MQTT. You can verify the integration by navigating to the Devices or Entities section in Home Assistant. Sensor data should appear as newly discovered devices or entities.
 
 <p>
   <img width="600px" alt="logo" src="../images/homeassistant_stations.png">

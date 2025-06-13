@@ -1,6 +1,6 @@
 # OpenHAB
 
-This guide explains how to connect the Open SmartCity Home application to OpenHAB via MQTT for weather sensor data integration.
+This guide explains how to connect the Open SmartCity Home application to OpenHAB via MQTT for sensor data integration.
 
 ## Prerequisite
 

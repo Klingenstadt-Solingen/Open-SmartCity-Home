@@ -3,10 +3,10 @@
   <img height="100px" alt="logo" src="documentation/images/logo.svg">
 </div>
 
- Open SmartCity Home is a software solution designed to bridge weather sensor data with home automation systems. Currently focused on the city of Solingen, Open SmartCity Home is designed to receive data from RabbitMQ, process it, and format it for seamless integration with various supported home systems.
+ Open SmartCity Home is a software solution designed to bridge sensor data with home automation systems. Currently focused on the city of Solingen, Open SmartCity Home is designed to receive data from RabbitMQ, process it, and format it for seamless integration with various supported home systems.
 
  ## Features
- - **Weather Data Integration:** Connects to RabbitMQ to receive real-time weather sensor data.
+ - **Sensor Data Integration:** Connects to RabbitMQ to receive real-time sensor data.
  - **Home Automation Support:** Formats and forwards data to:
     - **Home Assistant** (including systems compatible with Home Assistant's format and autodiscovery, such as OpenHAB).
     - **ioBroker** via its API.
@@ -16,7 +16,7 @@
 
 ### Home Assistant and OpenHAB
 
-Open SmartCity Home uses MQTT to publish weather sensor data in Home Assistant's autodiscovery format. This allows:
+Open SmartCity Home uses MQTT to publish sensor data in Home Assistant's autodiscovery format. This allows:
 
 - Easy integration with Home Assistant.
 
@@ -30,7 +30,7 @@ See the [guide on connecting Open SmartCity Home to OpenHAB](/documentation/home
 
 ### ioBroker
 
-Open SmartCity Home integrates with ioBroker via the REST-API Adapter, enabling direct communication for weather sensor data management.
+Open SmartCity Home integrates with ioBroker via the REST-API Adapter, enabling direct communication for sensor data management.
 
 See the [guide on connecting Open SmartCity Home to ioBroker](/documentation/homesystem/IOBROKER.md).
 
