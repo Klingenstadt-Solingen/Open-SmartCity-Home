@@ -44,6 +44,10 @@ See the [contribution guide](CONTRIBUTING.md) for more information.
 
 Open SmartCity Home is licensed under the [Open Smart City License](LICENSE.md).
 
+## Legal notices and data reliability
+
+Before using the data, please note the legal information [here](Legal-Notices-and-Data-Reliability.md).
+
 ## Contact
 
 For questions or support, please contact us at [opensmartcity@nedeco.de](mailto:opensmartcity@nedeco.de).
