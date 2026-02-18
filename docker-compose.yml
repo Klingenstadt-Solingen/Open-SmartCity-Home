@@ -13,7 +13,7 @@ services:
 
   iobroker:
     container_name: iobroker
-    image: buanet/iobroker:v10.0.0
+    image: buanet/iobroker:v11.1.0
     volumes:
       - ./smart-home/iobroker/:/opt/iobroker
     restart: unless-stopped
