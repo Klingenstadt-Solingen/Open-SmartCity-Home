@@ -15,7 +15,7 @@ jobs:
       pull-requests: write
     steps:
       - name: ⤵️ Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: 🐳 Run Dockerfile hadolint
         uses: reviewdog/action-hadolint@v1
