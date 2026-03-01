@@ -33,7 +33,7 @@ jobs:
         run: ./gradlew cyclonedxBom -P version="$HOME_VERSION"
 
       - name: ⤴️ Upload CycloneDX bom
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sbom-reports
           path: build/reports/bom.json
