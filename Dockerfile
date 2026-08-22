@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-openjdk-alpine:21.0.7 AS open-smartcity-home
+FROM bellsoft/liberica-openjdk-alpine:25.0.4.1 AS open-smartcity-home
 
 LABEL \
   maintainer="Nedeco" \
